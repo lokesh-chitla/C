@@ -1,5 +1,6 @@
 //How do you find the duplicate number on a given integer array?
 //Note, Assuming Integer values are in ascending order including Duplicate integer.
+// gcc find_dup_num_int_array.c -o find_dup_num_int_array
 #include <stdio.h>
 #include <stdlib.h>
 
