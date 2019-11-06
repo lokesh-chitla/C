@@ -5,7 +5,7 @@
 
 int find_dup(int start_range, int *arr)
 {
-  static cnt = 1;
+  static int cnt = 1;
 	int i = 0;
 	int j = 0;
 	for(; i <= 10; i++){
@@ -13,8 +13,7 @@ int find_dup(int start_range, int *arr)
 			if ( i+start_range != j+start_range){
 				if (arr[i+start_range] == arr[j+start_range]){
 					printf("%d.Duplicate number : %d\n", cnt, arr[i+start_range]);
-           cnt++;
-					return 0;
+           				cnt++; i++;
 				}
 			}
 		}
@@ -29,7 +28,7 @@ void main(){
 	int FOUND_DUP = 0;
 	long int cur_sum = 0;
 	long int exp_sum = 55;
-	int arr[30] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,19,20,21,22,23,23,25,26,27,28,29,30};
+	int arr[30] = {1,2,3,4,5,6,7,9,9,10,11,12,13,14,15,16,17,17,19,20,21,22,23,23,25,25,27,28,29,30};
 	for (; i < 30;)	{
 		for(x = i;k < 10; k++)
 		{
