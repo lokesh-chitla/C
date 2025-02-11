@@ -6,6 +6,8 @@
 # For target 6, res: [-1,-1]
 */
 
+// Approach-1 Single pass
+
 #include <stdio.h>
 
 int main() {
@@ -19,6 +21,32 @@ int main() {
             if (first == -1)
                 first = i;
             last = i;  // Always update last when found
+        }
+    }
+
+    printf("[%d, %d]\n", first, last);
+    return 0;
+}
+
+// Approach-2 Two pass
+#include <stdio.h>
+
+int main() {
+    int arr[] = {2, 3, 4, 7, 8, 9, 9, 7, 0, 7};
+    int first = -1, last = -1;
+    int target = 7;
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < size; i++) {    
+        if (arr[i] == target) {
+            first = i;
+            break;
+        }
+    }
+    for (int i = size -1; i >= 0 ; i--) {    
+        if (arr[i] == target) {
+            last = i;
+            break;
         }
     }
 
